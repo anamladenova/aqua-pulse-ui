@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="bg-navbar-color">
+    <div class="flex justify-center py-7">
+      <div class="relative">
+        <svg
+          width="56"
+          height="56"
+          viewBox="0 0 59 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M56 15.2105L49.7647 9.10526M21.7059 3H34.1765M27.9412 61C14.1665 61 3 50.0664 3 36.5789C3 23.0916 14.1665 12.1579 27.9412 12.1579C41.7159 12.1579 52.8824 23.0916 52.8824 36.5789C52.8824 50.0664 41.7159 61 27.9412 61Z"
+            stroke="#0071BC"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <div
+          class="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold text-white"
+          id="counter"
+        >
+          20
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const counterElement = document.getElementById("counter");
+
+      let seconds = 20;
+
+      const interval = setInterval(updateCounter, 1000);
+
+      function updateCounter() {
+        if (seconds > 0) seconds--;
+        else clearInterval(interval);
+        counterElement.innerText = seconds;
+      }
+    </script>
+
+    <div
+      class="flex justify-center text-center text-white text-xl font-extrabold py-3"
+    >
+      <h3>
+        How much of the Earth’s <br />
+        surface is covered by ocean?
+      </h3>
+    </div>
+
+    <div class="py-7">
+      <img
+        class="mx-auto rounded-xl"
+        src="./img/oceanimg.png"
+        alt="world ocean"
+      />
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 max-w-xs mx-auto">
+      <button class="px-7 py-5 rounded-md bg-button-color text-navbar-color text-2xl font-extrabold">51%</button>
+      <button class="px-7 py-5 rounded-md bg-button-color text-navbar-color text-2xl font-extrabold">68%</button>
+      <button class="px-7 py-5 rounded-md bg-button-color text-navbar-color text-2xl font-extrabold">75%</button>
+      <button class="px-7 py-5 rounded-md bg-button-color text-navbar-color text-2xl font-extrabold">71%</button>
+    </div>
+  </body>
+</html>
